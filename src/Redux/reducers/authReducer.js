@@ -18,6 +18,7 @@ const initState = {
 };
   
   const authReducer = (state = initState, action) => {
+    console.log('ACTION', action)
     switch (action.type) {
       case SIGNING_UP:
         return {
@@ -35,7 +36,7 @@ const initState = {
         return {
           ...state,
           loading: false,
-          error: action.error,
+          error: 'Failure Signing Up, Email may already exist',
         };
       case LOGGING_IN:
         return {
@@ -53,7 +54,7 @@ const initState = {
         return {
           ...state,
           loading: false,
-          error: action.error,
+          error: 'Failure Logging In, Check your details or make sure you have an account',
         };
       case CHECK_LOGIN_STATUS_FAIL:
         return {

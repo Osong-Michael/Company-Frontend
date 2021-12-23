@@ -56,6 +56,7 @@ const SignUp = () => {
                         name="password"
                         value={state.password}
                         onChange={handleChange}
+                        required
                     />
                 </div>
 

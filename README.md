@@ -9,6 +9,9 @@ A simple company dashboard app.
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2ba6f672-7f3c-4591-879d-ddc3caea83a1/deploy-status)](https://app.netlify.com/sites/oa7-company/deploys)
 
 
+# Live Demo 
+- Demo: [Company App](https://oa7-company.netlify.app/)
+
 ## Local Usage
 
 To use this app locally, this is what you need to:
