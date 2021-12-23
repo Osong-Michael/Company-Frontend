@@ -31,7 +31,7 @@ const Login = () => {
     useEffect(() => {
         if (user) return navigate('/');
         error && setErr(true);
-    }, []);
+    }, [user, error]);
 
     return (
         <React.Fragment>
