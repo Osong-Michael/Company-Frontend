@@ -2,6 +2,9 @@ import {
     FETCH_ALL_COMPANIES_START,
     FETCH_ALL_COMPANIES_SUCCESS,
     FETCH_ALL_COMPANIES_FAILED,
+    FETCH_ALL_NAICS_START,
+    FETCH_ALL_NAICS_SUCCESS,
+    FETCH_ALL_NAICS_FAILED,
   } from '../actions/index';
 
 const initState = {
@@ -25,6 +28,23 @@ const companyReducer = (state = initState, action) => {
           companies: action.companies,
         };
       case FETCH_ALL_COMPANIES_FAILED:
+        return {
+          ...state,
+          loading: false,
+          error: action.error,
+        };
+      case FETCH_ALL_NAICS_START:
+        return {
+          ...state,
+          loading: true,
+        };
+      case FETCH_ALL_NAICS_SUCCESS:
+        return {
+          ...state,
+          loading: false,
+          naics: action.naics,
+        };
+      case FETCH_ALL_NAICS_FAILED:
         return {
           ...state,
           loading: false,

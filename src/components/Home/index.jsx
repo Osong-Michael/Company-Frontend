@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import SpinnerComp from '../Spinner';
-import { getCompanies } from '../../Redux/actions/companyActions';
+import { getCompanies, getNaics } from '../../Redux/actions/companyActions';
 import TableContainer from '../Table';
 import { dayOfMonth } from '../Helpers';
 
@@ -17,7 +17,8 @@ const Home = () => {
 
     useEffect(() => {
         if (!user) return navigate('/sign-in');
-        dispatch(getCompanies())
+        dispatch(getCompanies());
+        dispatch(getNaics());
     }, []);
 
     const columns = useMemo(

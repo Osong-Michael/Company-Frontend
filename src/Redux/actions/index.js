@@ -10,6 +10,9 @@ const LOG_OUT_USER = 'LOG_OUT_USER';
 const FETCH_ALL_COMPANIES_START = 'FETCH_ALL_COMPANIES_START';
 const FETCH_ALL_COMPANIES_SUCCESS = 'FETCH_ALL_COMPANIES_SUCCESS';
 const FETCH_ALL_COMPANIES_FAILED = 'FETCH_ALL_COMPANIES_FAILED';
+const FETCH_ALL_NAICS_START = 'FETCH_ALL_NAICS_START';
+const FETCH_ALL_NAICS_SUCCESS = 'FETCH_ALL_NAICS_SUCCESS';
+const FETCH_ALL_NAICS_FAILED = 'FETCH_ALL_NAICS_FAILED';
 
 
 
@@ -93,6 +96,26 @@ function fetchingCompaniesFail(error) {
   };
 };
 
+function fetchingNaicsStart() {
+  return {
+    type: FETCH_ALL_NAICS_START,
+  };
+};
+
+function fetchingNaicsSuccess(naics) {
+  return {
+    type: FETCH_ALL_NAICS_SUCCESS,
+    naics
+  };
+};
+
+function fetchingNaicsFail(error) {
+  return {
+    type: FETCH_ALL_NAICS_FAILED,
+    error
+  };
+};
+
 export {
     SIGNING_UP,
     SIGNED_UP_SUCCESFUL,
@@ -106,6 +129,9 @@ export {
     FETCH_ALL_COMPANIES_START,
     FETCH_ALL_COMPANIES_SUCCESS,
     FETCH_ALL_COMPANIES_FAILED,
+    FETCH_ALL_NAICS_START,
+    FETCH_ALL_NAICS_SUCCESS,
+    FETCH_ALL_NAICS_FAILED,
     signingUp,
     signUpSuccess,
     signUpError,
@@ -118,4 +144,7 @@ export {
     fetchingCompaniesStart,
     fetchingCompaniesSuccess,
     fetchingCompaniesFail,
+    fetchingNaicsStart,
+    fetchingNaicsSuccess,
+    fetchingNaicsFail,
   };

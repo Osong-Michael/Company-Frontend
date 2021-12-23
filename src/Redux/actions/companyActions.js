@@ -2,6 +2,9 @@ import {
     fetchingCompaniesStart,
     fetchingCompaniesSuccess,
     fetchingCompaniesFail,
+    fetchingNaicsStart,
+    fetchingNaicsSuccess,
+    fetchingNaicsFail,
 } from './index';
 import { authHeader } from './authActions';
 import API from './api';
@@ -19,4 +22,17 @@ function getCompanies() {
     };
 };
 
-export { getCompanies };
+function getNaics() {
+  return async dispatch => {
+    dispatch(fetchingNaicsStart());
+    await API.get('naics', { headers: authHeader() })
+      .then(res => {
+          dispatch(fetchingNaicsSuccess(res.data));
+      })
+      .catch(error => {
+        dispatch(fetchingNaicsFail(error.error));
+      });
+  };
+};
+
+export { getCompanies, getNaics };
